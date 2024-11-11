@@ -10,11 +10,13 @@
   background-color: #f1f1f1;
   border: none;
   color: black;
-  padding: 16px 32px;
+  padding: 16px 24px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-size: 16px; 
   transition-duration: 0.6s;
   cursor: pointer;
 }
@@ -25,6 +27,10 @@
   color: black;
 }
 
+
+.flex {
+  display: flex;
+}
 
 * {
   box-sizing: border-box;
@@ -53,7 +59,6 @@ samples {
   -ms-flex: 1;
   flex: 1;
   background: #ccc;
-  padding: 20px;
 }
 
 
@@ -80,22 +85,25 @@ footer {
 </header>
 
 <section>
-  <samples class="button">
+  <samples>
+  <a href="https://www.google.com" class="button" target="_blank">
   <h1>Wiki Netplay Guide</h1>
-  <p>This is my first sample</p>
+  <p>This is my first sample</p></a>
   </samples>
   
- <samples class="button">
+ <samples>
+  <a href="https://www.discord.com" class="button" target="_blank">
+
     <h1>MLA Guide</h1>
     <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
-    <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+    <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p></a>
   </samples>
   
- <samples class="button">
- 	
+  
+ <samples>
+ <a href="https://www.google.com" class="button" target="_blank">
    <h1>Pokemon Logic Guide</h1>
-   <br>
-   <p>This is my final sample.</p>
+   <p>This is my final sample.</p></a>
   </samples>
   
 </section>
