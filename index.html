@@ -223,5 +223,37 @@ footer {
   (203) 446-7512</p>
 </footer>
 
+    <script>
+    // Get all the buttons
+    const buttons = document.querySelectorAll('.button');
+
+    // Function to darken all buttons except the hovered one
+    function darkenButtons(exceptButton) {
+      buttons.forEach(button => {
+        if (button !== exceptButton) {
+          button.style.filter = 'brightness(0.2)';
+        }
+      });
+    }
+
+    // Function to reset the darkening effect
+    function resetButtonDarkness() {
+      buttons.forEach(button => {
+        button.style.filter = 'none';
+      });
+    }
+
+    // Add event listeners for mouseenter and mouseleave
+    buttons.forEach(button => {
+      button.addEventListener('mouseenter', () => {
+        darkenButtons(button); // Darken all buttons except the hovered one
+      });
+
+      button.addEventListener('mouseleave', () => {
+        resetButtonDarkness(); // Reset all buttons when the mouse leaves
+      });
+    });
+  </script>
+  
 </body>
 </html>
