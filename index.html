@@ -16,6 +16,10 @@
       border: 6px solid white;
     }
 
+    .flex {
+      display: flex;
+    }
+
     .button, .originalbutton {
       background-color: #dfdfdf;
       border: 3px solid #3b3b3b;
@@ -74,10 +78,6 @@
       max-width: 100%;
       max-height: 100%;
       border: 3px solid #3b3b3b;
-    }
-
-    .flex {
-      display: flex;
     }
 
     header {
@@ -202,7 +202,6 @@
   </footer>
 
   <script>
-    // Get all the buttons
     const buttons = document.querySelectorAll('.button, .originalbutton');
     
     const wikiButton = document.querySelector('.wiki-netplay');
@@ -211,36 +210,33 @@
     const aiLogicButton = document.querySelector('.ai-logic');
     const aiLogicOriginalButton = document.querySelector('.ai-logic-original');
 
-    // Function to darken all buttons except the hovered one and its original counterpart
     function darkenButtons(exceptButtons) {
       buttons.forEach(button => {
         if (!exceptButtons.includes(button)) {
-button.style.filter = 'brightness(3%) opacity(0.65)';
+          button.style.filter = 'brightness(3%) opacity(0.65)';
         }
       });
     }
 
-    // Function to reset the darkening effect
     function resetButtonDarkness() {
       buttons.forEach(button => {
         button.style.filter = 'none';
       });
     }
 
-    // Add event listeners for mouseenter and mouseleave
     buttons.forEach(button => {
       button.addEventListener('mouseenter', () => {
         if (button === wikiButton) {
-          darkenButtons([wikiButton, wikiOriginalButton]); // Darken all except Wiki Netplay and Original Wiki Netplay
+          darkenButtons([wikiButton, wikiOriginalButton]);
         } else if (button === aiLogicButton) {
-          darkenButtons([aiLogicButton, aiLogicOriginalButton]); // Darken all except AI Logic and Original AI Logic
+          darkenButtons([aiLogicButton, aiLogicOriginalButton]);
         } else if (button === mlaButton) {
-          darkenButtons([mlaButton]); // Darken all except MLA Formatting Guide
+          darkenButtons([mlaButton]);
         }
       });
 
       button.addEventListener('mouseleave', () => {
-        resetButtonDarkness(); // Reset all buttons when the mouse leaves
+        resetButtonDarkness();
       });
     });
   </script>
